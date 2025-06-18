@@ -8,6 +8,6 @@ terraform {
 }
 
 provider "cloudflare" {
-  # Configuration options
+  # Configuration optionz
 
 }

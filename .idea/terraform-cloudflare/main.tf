@@ -12,9 +12,19 @@ provider "cloudflare" { # Configuration options
 }
 
 resource "cloudflare_dns_record" "www" {
-  zone_id = var.zone_id
   name    = "www"
-  value   = "74.208.123.48"
+  ttl     = 1
   type    = "A"
+  zone_id = var.zone_id
+  content = "74.208.123.48"
+  proxied = true
+}
+
+resource "cloudflare_dns_record" "root" {
+  name    = "@"
+  ttl     = 1
+  type    = "A"
+  zone_id = var.zone_id
+  content = "74.208.123.48"
   proxied = true
 }

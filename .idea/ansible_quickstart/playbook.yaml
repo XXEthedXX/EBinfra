@@ -1,0 +1,9 @@
+- name: Blue 42
+  hosts: myhosts
+  tasks:
+    - name: Ping Hosts
+      ansible.builtin.ping:
+
+    - name: Say Hello
+      ansible.built.in.debug:
+        msg: Heyo World
